@@ -32,6 +32,7 @@ pricescout_project/
 
 
 
+
     [ Интернет: API сайтов ] 
             │  
             ▼  (Шаг 5: Модуль fetcher.py скачивает сырой JSON через HTTP)

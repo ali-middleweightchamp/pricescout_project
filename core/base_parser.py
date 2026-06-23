@@ -7,7 +7,7 @@ class Product:
         self.category = category
 
     def __str__(self):
-        return f"Categoty: {self.category} | {self.name} - ${self.price:.1f}"  
+        return f"Category: {self.category} | {self.name} - ${self.price:.1f}"  
 
     def __lt__(self, other):
         if not isinstance(other, Product):
@@ -24,7 +24,8 @@ class Base_Parser:
     
 
 class DummyParser(Base_Parser):
-    super().__init__(category="Электроника")
+    def __init__(self):
+        super().__init__(category="Электроника")
     
     async def fetch_raw_data(self) -> list:
         await asyncio.sleep(2)

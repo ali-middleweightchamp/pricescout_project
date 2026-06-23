@@ -2,6 +2,7 @@ from database.connection import get_db_connection
 from core.base_parser import Product
 import asyncio
 
+
 async def create_tables():
     sql = """
     CREATE TABLE IF NOT EXISTS products (
@@ -38,7 +39,6 @@ if __name__ == "__main__":
         test_item = Product(name="iPhone 15 Pro Max", price=16000000.0, category="Смартфоны")
         
         print(f"📥 Пробуем сохранить: {test_item.name}...")
-        asyncio.sleep(3)
         await save_product(test_item)
         print("✅ Товар успешно сохранен в SQL!")
         

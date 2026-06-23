@@ -2,8 +2,19 @@ from core.base_parser import Product
 
 def extract_products(raw_data: list):
     for item in raw_data:
-        name = item.get("title")
-        fake_price = float(item.get("id", 0) * 100000)
+        name = item.get("title", "").strip()
+        raw_cost = item.get("cost", "")
+
+        if "не указана" in raw_cost or not raw_cost:
+            print(f"⚠️ [ПРОПУСК] Товар '{name}' отфильтрован (нет цены)")
+            continue
+
+        clean_cost_str = raw_cost.replace("сум", "").strip()
+        try: 
+            price = float(clean_cost_str)
+        except:
+            ValueError
+            continue
         
         product = Product(name = name, price = fake_price, category = "Тест")
         yield product

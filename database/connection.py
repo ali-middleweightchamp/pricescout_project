@@ -26,6 +26,6 @@ if __name__ == "__main__":
                     print(f"✅ Успешно! Версия SQLite: {version[0]}")
         except Exception as e:
             print(f"❌ Ошибка подключения: {e}")
-
-    asyncio.run(test_connection())
     
+
+

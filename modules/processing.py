@@ -16,7 +16,7 @@ def extract_products(raw_data: list):
             ValueError
             continue
         
-        product = Product(name = name, price = fake_price, category = "Тест")
+        product = Product(name = name, price = price, category = "Электроника")
         yield product
 
 if __name__ == "__main__":

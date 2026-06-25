@@ -1,5 +1,5 @@
 import asyncio
-from core.base_parser import DummyParser
+from core.uzum_parser import UzumParser
 from modules.processing import extract_products
 from database.models import create_tables, save_product
 
@@ -8,7 +8,7 @@ async def main():
 
     await create_tables()
 
-    parser = DummyParser()
+    parser = UzumParser()
     print("\n⏳ Скачиваем сырые данные...")
 
     raw_data = await parser.fetch_raw_data()
